@@ -1,0 +1,37 @@
+<div>
+  <!-- NGIF -->
+  <h3 *ngIf="displayComponent; else elseBlock">Server Component</h3>
+  <ng-template #elseBlock>
+    <h3>
+      Componenet is Hidden
+    </h3>
+  </ng-template>
+
+  <div *ngIf="displayName; then thenBlock; else elseBlock"></div>
+  <ng-template #thenBlock>
+    <h3>
+      Name is Biswa Bhusan Gupta
+    </h3>
+  </ng-template>
+  <ng-template #elseBlock>
+    <h3>
+      Name is Yash Gupta
+    </h3>
+  </ng-template>
+
+  <!-- NGSWITCH -->
+  <div [ngSwitch]="color">
+    <div *ngSwitchCase="'red'">Red Color</div>
+    <div *ngSwitchCase="'blue'">Blue Color</div>
+    <div *ngSwitchCase="'yellow'">Yellow Color</div>
+    <div *ngSwitchDefault>Default</div>
+  </div>
+
+  <br />
+  <!-- NGFOR -->
+  <div
+    *ngFor="let x of lists;index as i first as f last as l odd as o even as e"
+  >
+    <h5>{{i}} : {{x}} {{f}} {{l}} {{o}} {{e}}</h5>
+  </div>
+</div>
